@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import React, {lazy} from 'react'
 import './App.css';
+import {
+    Routes,
+    Route, RouterProvider, createBrowserRouter, createRoutesFromElements,
+} from "react-router-dom";
+import AppViews from "./views/app-views";
+import NotFound from "./views/errors-views/not-found";
+import AuthViews from "./views/auth-views";
+import VerifyViews from "./views/verify-views";
+import {route} from "./config";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+    const router = createBrowserRouter(route);
+    return (
+        <React.Fragment>
+            <RouterProvider router={router}/>
+
+        </React.Fragment>
+    );
 }
 
 export default App;

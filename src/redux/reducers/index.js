@@ -1,0 +1,3 @@
+const rootReducers = {}
+
+export {rootReducers}
