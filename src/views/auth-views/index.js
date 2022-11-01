@@ -9,8 +9,9 @@ const AuthViews = (props) => {
 
     return (
         <Routes>
-            <Route path="*" element={<AuthLayout/>}>
-                <Route path="login" element={<SignInPage/>}/>
+            <Route path="*" element={<AuthLayout/>} errorElement={'Error Element'}>
+                <Route index element={<SignInPage/>} errorElement={'Error Element'}/>
+                <Route path="login" element={<SignInPage/>} errorElement={'Error Element'}/>
                 <Route path="register" element={<SignUpPage/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Route>
